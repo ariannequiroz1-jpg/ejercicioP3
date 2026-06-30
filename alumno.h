@@ -1,21 +1,8 @@
+#ifndef BUSQUEDA_H
+#define BUSQUEDA_H
  
-#ifndef ALUMNO_H
-#define ALUMNO_H
+#include "alumno.h"
  
-// Estructura Dirección
-typedef struct Direccion
-{
-    char callePrincipal[50];
-    int numeroCasa;
-    char calleSecundaria[50];
-} Direccion;
- 
-// Estructura Alumno
-typedef struct
-{
-    char nombre[50];
-    Direccion direccion;
-    int edad;
-} Alumno;
+void buscarAlumno(char *nombreBuscado);
  
 #endif
