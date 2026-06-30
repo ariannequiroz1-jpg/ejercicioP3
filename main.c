@@ -8,6 +8,7 @@
 int main()
 {
     Alumno p1[2];
+    char nombreBuscado[50];
 
     strcpy(p1[0].nombre, "Juanito");
     strcpy(p1[0].direccion.callePrincipal, "Av. Prensa");
@@ -21,11 +22,13 @@ int main()
     strcpy(p1[1].direccion.calleSecundaria, "Borja");
     p1[1].edad = 22;
 
+    printf("===== ALUMNOS REGISTRADOS =====\n\n");
+    mostrarAlumno(p1, 2);
+
     guardarArchivo(p1, 2);
 
+    printf("\n===== DATOS DEL ARCHIVO =====\n\n");
     leerArchivoCSV();
-
-    char nombreBuscado[50];
 
     printf("\nIngrese el nombre a buscar: ");
     fgets(nombreBuscado, sizeof(nombreBuscado), stdin);
@@ -35,4 +38,3 @@ int main()
 
     return 0;
 }
- 

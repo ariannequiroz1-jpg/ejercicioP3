@@ -3,8 +3,8 @@
 
 #include "alumno.h"
 
+void mostrarAlumno(Alumno *a, int tam);
 void guardarArchivo(Alumno *a, int tam);
 void leerArchivoCSV();
-void mostrarAlumno(Alumno *a, int tam);
 
 #endif

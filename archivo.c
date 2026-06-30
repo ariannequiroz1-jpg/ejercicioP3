@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "archivo.h"
 
-// Mostrar arreglo de alumnos en pantalla
 void mostrarAlumno(Alumno *a, int tam)
 {
     for (int i = 0; i < tam; i++)
@@ -15,7 +14,31 @@ void mostrarAlumno(Alumno *a, int tam)
     }
 }
 
-// Leer archivo CSV
+void guardarArchivo(Alumno *a, int tam)
+{
+    FILE *archivo = fopen("alumnos.csv", "w");
+
+    if (archivo == NULL)
+    {
+        printf("Error al crear el archivo.\n");
+        return;
+    }
+
+    for (int i = 0; i < tam; i++)
+    {
+        fprintf(archivo,
+                "%s;%s;%d;%s;%d\n",
+                a[i].nombre,
+                a[i].direccion.callePrincipal,
+                a[i].direccion.numeroCasa,
+                a[i].direccion.calleSecundaria,
+                a[i].edad);
+    }
+
+    fclose(archivo);
+    printf("\nArchivo guardado correctamente.\n");
+}
+
 void leerArchivoCSV()
 {
     FILE *archivo = fopen("alumnos.csv", "r");
